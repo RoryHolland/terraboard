@@ -8,12 +8,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/camptocamp/terraboard/api"
-	"github.com/camptocamp/terraboard/auth"
-	"github.com/camptocamp/terraboard/config"
-	"github.com/camptocamp/terraboard/db"
-	"github.com/camptocamp/terraboard/s3"
-	"github.com/camptocamp/terraboard/util"
+	"github.com/roryholland/terraboard/api"
+	"github.com/roryholland/terraboard/auth"
+	"github.com/roryholland/terraboard/config"
+	"github.com/roryholland/terraboard/db"
+	"github.com/roryholland/terraboard/s3"
+	"github.com/roryholland/terraboard/util"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -116,7 +116,7 @@ func getVersion(w http.ResponseWriter, r *http.Request) {
 
 	j, err := json.Marshal(map[string]string{
 		"version":   version,
-		"copyright": "Copyright © 2017 Camptocamp",
+		"copyright": "Copyright © 2017 roryholland",
 	})
 	if err != nil {
 		api.JSONError(w, "Failed to marshal version", err)
